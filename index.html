@@ -3,545 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NB.Dev | Профессиональная разработка сайтов под ключ (Удаленно / СНГ)</title>
-    <!-- Подключаем дорогой, читаемый шрифт Inter -->
+    <title>NB.Dev | Разработка сайтов под ключ (удалённо / СНГ)</title>
+    <meta name="description" content="Адаптивные лендинги, сайты-визитки и магазины для бизнеса в СНГ. Удалённая разработка от идеи до запуска — NB.Dev.">
+    <meta property="og:title" content="NB.Dev — сайты под ключ">
+    <meta property="og:description" content="Продающие лендинги и бизнес-сайты. Работаю удалённо по всему СНГ.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link rel="canonical" href="https://dreadwyn.github.io/Site/">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- БАЗОВЫЕ НАСТРОЙКИ (СБРОС СТИЛЕЙ) --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* Глубокий премиальный темный фон */
+            background-color: #0f172a;
             color: #e2e8f0;
-            overflow-x: hidden; /* Запрещаем экрану шататься влево-вправо */
+            overflow-x: hidden;
             width: 100%;
             scroll-behavior: smooth;
         }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        h2 { font-size: 32px; text-align: center; margin-bottom: 50px; color: #fff; font-weight: 700; }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0; /* Добавляем воздуху между блоками */
-        }
-
-        h2 {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        /* --- ШАПКА САЙТА (HEADER) --- */
         header {
             background-color: rgba(15, 23, 42, 0.9);
             backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
+            display: flex; justify-content: space-between; align-items: center; height: 70px;
         }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: #38bdf8; /* Красивый голубой акцент */
-            text-decoration: none;
-        }
-
+        .logo { font-size: 22px; font-weight: 700; color: #38bdf8; text-decoration: none; }
         nav a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #94a3b8; text-decoration: none; margin-left: 25px;
+            font-size: 15px; font-weight: 500; transition: color 0.3s;
         }
+        nav a:hover { color: #38bdf8; }
 
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-        /* --- ГЛАВНЫЙ ЭКРАН (HERO SECTION) --- */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 100px;
+            min-height: 100vh; display: flex; align-items: center; padding-top: 100px;
             background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 50%);
         }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
+        .hero-content { max-width: 700px; }
         .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: #fff;
+            font-size: 48px; font-weight: 800; line-height: 1.2;
+            margin-bottom: 20px; color: #fff;
         }
-
-        .hero p {
-            font-size: 18px;
-            color: #94a3b8;
-            margin-bottom: 35px;
-            line-height: 1.6;
-        }
+        .hero p { font-size: 18px; color: #94a3b8; margin-bottom: 35px; line-height: 1.6; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
         .btn {
-            display: inline-block;
-            background-color: #38bdf8;
-            color: #0f172a;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.2s, background-color 0.2s;
+            display: inline-block; background-color: #38bdf8; color: #0f172a;
+            padding: 14px 28px; border-radius: 8px; font-weight: 600;
+            text-decoration: none; transition: transform 0.2s, background-color 0.2s; border: none; cursor: pointer;
         }
-
-        .btn:hover {
-            background-color: #0ea5e9;
-            transform: translateY(-2px);
+        .btn:hover { background-color: #0ea5e9; transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent; color: #e2e8f0;
+            border: 1px solid rgba(148, 163, 184, 0.45);
         }
+        .btn-outline:hover { border-color: #38bdf8; color: #38bdf8; background: transparent; }
 
-        /* --- НАВЫКИ / ПРЕИМУЩЕСТВА (FEATURES) --- */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .card {
-            background-color: #1e293b;
-            padding: 35px;
-            border-radius: 12px;
+            background-color: #1e293b; padding: 35px; border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
             border-color: rgba(56, 189, 248, 0.2);
         }
+        .card h3 { font-size: 20px; color: #fff; margin-bottom: 15px; }
+        .card p { color: #94a3b8; font-size: 15px; line-height: 1.6; }
 
-        .card h3 {
-            font-size: 20px;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* --- СЕКЦИЯ ПОРТФОЛИО (ГАЛЕРЕЯ / СЛАЙДЕР) --- */
-        .portfolio-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
+        .portfolio-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
         .tab-btn {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s;
+            background: transparent; border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8; padding: 10px 20px; border-radius: 6px; cursor: pointer;
+            font-weight: 500; transition: all 0.3s; font-family: inherit;
         }
-
         .tab-btn.active, .tab-btn:hover {
-            background-color: #38bdf8;
-            color: #0f172a;
-            border-color: #38bdf8;
+            background-color: #38bdf8; color: #0f172a; border-color: #38bdf8;
         }
-
         .slider-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            background-color: #1e293b;
-            padding: 20px;
+            position: relative; overflow: hidden; border-radius: 12px;
+            background-color: #1e293b; padding: 20px;
         }
-
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .slider { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; box-sizing: border-box; padding: 10px; text-align: center; }
+        .slide.is-hidden { display: none; }
+        .project-visual {
+            width: 100%; min-height: 320px; border-radius: 8px; margin-bottom: 15px;
+            display: flex; align-items: flex-end; padding: 24px;
+            background-size: cover; background-position: center;
+            position: relative; overflow: hidden;
         }
-
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: center;
+        .project-visual::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(15, 23, 42, 0.85) 100%);
         }
-
-        .slide img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
+        .project-visual span {
+            position: relative; z-index: 1; font-size: 14px; font-weight: 600;
+            color: #e2e8f0; letter-spacing: 0.02em;
         }
-
+        .pv-1 { background-image: linear-gradient(135deg, #0ea5e9, #1e293b 55%, #38bdf8); }
+        .pv-2 { background-image: linear-gradient(135deg, #6366f1, #1e293b 55%, #94a3b8); }
+        .pv-3 { background-image: linear-gradient(135deg, #14b8a6, #1e293b 55%, #38bdf8); }
+        .slide h3 { color: #fff; margin-bottom: 8px; font-size: 20px; }
+        .slide p { color: #94a3b8; font-size: 15px; line-height: 1.5; max-width: 520px; margin: 0 auto; }
         .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(15, 23, 42, 0.7);
-            color: #fff;
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background-color: rgba(15, 23, 42, 0.7); color: #fff; border: none;
+            width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center; transition: background 0.3s;
         }
-
-        .slider-btn:hover {
-            background-color: #38bdf8;
-            color: #0f172a;
-        }
-
+        .slider-btn:hover { background-color: #38bdf8; color: #0f172a; }
         .slider-btn.prev { left: 20px; }
         .slider-btn.next { right: 20px; }
 
-        /* --- ВОПРОСЫ И ОТВЕТЫ (FAQ ACCORDION) --- */
-        .faq-max {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .faq-max { max-width: 800px; margin: 0 auto; }
         .faq-item {
-            background-color: #1e293b;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: #1e293b; border-radius: 8px; margin-bottom: 15px;
+            overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .faq-question {
-            padding: 20px;
-            font-weight: 600;
-            color: #fff;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
+            width: 100%; text-align: left; background: none; border: none; font: inherit;
+            padding: 20px; font-weight: 600; color: #fff; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 20px;
-            color: #38bdf8;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
-        }
-
+        .faq-question::after { content: '+'; font-size: 20px; color: #38bdf8; transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: rgba(15, 23, 42, 0.3);
-            color: #94a3b8;
-            font-size: 15px;
-            line-height: 1.6;
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+            background-color: rgba(15, 23, 42, 0.3); color: #94a3b8; font-size: 15px; line-height: 1.6;
         }
+        .faq-answer-content { padding: 0 20px 20px; }
 
-        .faq-answer-content {
-            padding: 20px;
+        .contact {
+            background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.06));
         }
+        .contact-box {
+            max-width: 640px; margin: 0 auto; text-align: center;
+            background: #1e293b; border-radius: 12px; padding: 40px 28px;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .contact-box p { color: #94a3b8; margin-bottom: 24px; line-height: 1.6; }
+        .contact-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 
-        /* --- ПОДВАЛ (FOOTER) --- */
         footer {
-            background-color: #090d16;
-            padding: 40px 0;
+            background-color: #090d16; padding: 40px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            color: #64748b;
-            font-size: 14px;
+            text-align: center; color: #64748b; font-size: 14px;
         }
+        footer a { color: #38bdf8; text-decoration: none; }
+        footer .footer-links { margin-bottom: 12px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* ======================================================= */
-        /* --- ЖЕСТКАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (ДЛЯ СМАРТФОНОВ) --- */
-        /* ======================================================= */
         @media (max-width: 768px) {
-            section {
-                padding: 50px 0;
-            }
-
-            h2 {
-                font-size: 24px;
-                margin-bottom: 30px;
-            }
-
-            /* Перестраиваем шапку */
-            .header-container {
-                flex-direction: column;
-                height: auto;
-                padding: 15px 0;
-                gap: 10px;
-            }
-
-            nav a {
-                margin: 0 10px;
-                font-size: 14px;
-            }
-
-            /* Главный экран */
-            .hero {
-                padding-top: 140px;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            /* Превращаем сетки из 3 колонок в 1 колонку */
-            .grid-3 {
-                grid-template-columns: 1fr !important;
-                gap: 20px;
-            }
-
-            .card {
-                padding: 25px;
-            }
-
-            /* Слайдер портфолио */
-            .slide img {
-                max-height: 250px;
-            }
-
-            .slider-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-            
-            .portfolio-tabs {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            
-            .tab-btn {
-                padding: 8px 14px;
-                font-size: 13px;
-                flex: 1 1 40%;
-            }
+            section { padding: 50px 0; }
+            h2 { font-size: 24px; margin-bottom: 30px; }
+            .header-container { flex-direction: column; height: auto; padding: 15px 0; gap: 10px; }
+            nav a { margin: 0 10px; font-size: 14px; }
+            .hero { padding-top: 140px; text-align: center; }
+            .hero-actions { justify-content: center; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 15px; }
+            .grid-3 { grid-template-columns: 1fr !important; gap: 20px; }
+            .card { padding: 25px; }
+            .project-visual { min-height: 220px; }
+            .slider-btn { width: 35px; height: 35px; font-size: 16px; }
+            .portfolio-tabs { flex-wrap: wrap; gap: 8px; }
+            .tab-btn { padding: 8px 14px; font-size: 13px; flex: 1 1 40%; }
         }
     </style>
 </head>
 <body>
-
-    <!-- ШАПКА -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">NB.Dev</a>
-            <nav>
+            <a href="#about" class="logo">NB.Dev</a>
+            <nav aria-label="Основная навигация">
                 <a href="#about">Обо мне</a>
                 <a href="#portfolio">Портфолио</a>
                 <a href="#faq">FAQ</a>
+                <a href="#contact">Контакты</a>
             </nav>
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero" id="about">
         <div class="container">
             <div class="hero-content">
                 <h1>Разработка продающих сайтов для вашего бизнеса</h1>
-                <p>Создаю адаптивные лендинги, сайты-визитки и интернет-магазины для компаний по всему СНГ. Полное ведение проекта удаленно: от идеи до запуска в сеть.</p>
-                <a href="https://t.me/Dredwyn" class="btn" target="_blank">Заказать проект</a>
+                <p>Создаю адаптивные лендинги, сайты-визитки и интернет-магазины для компаний по всему СНГ. Полное ведение проекта удалённо: от идеи до запуска в сеть.</p>
+                <div class="hero-actions">
+                    <a href="https://t.me/Dredwyn" class="btn" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+                    <a href="#portfolio" class="btn btn-outline">Смотреть работы</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- НАВЫКИ / УСЛУГИ -->
     <section class="container">
         <h2>Что я предлагаю вашему бизнесу</h2>
         <div class="grid-3">
             <div class="card">
                 <h3>Идеальная адаптивность</h3>
-                <p>Ваш сайт будет одинаково круто и быстро открываться на любых смартфонах, айфонах, планшетах и компьютерах.</p>
+                <p>Ваш сайт будет одинаково быстро открываться на смартфонах, планшетах и компьютерах.</p>
             </div>
             <div class="card">
                 <h3>Современный стек</h3>
-                <p>Верстаю чистым, оптимизированным кодом на HTML5, CSS3 и JavaScript. Никаких тяжелых и тормозящих конструкторов.</p>
+                <p>Чистый код на HTML5, CSS3 и JavaScript. Без тяжёлых конструкторов, которые тормозят загрузку.</p>
             </div>
             <div class="card">
                 <h3>Готовность к рекламе</h3>
-                <p>Настраиваю структуру сайта так, чтобы запуск таргета в Instagram или контекстной рекламы в Google приносил максимальные заявки.</p>
+                <p>Структура под заявки из Instagram, Telegram и контекстной рекламы Google.</p>
             </div>
         </div>
     </section>
 
-    <!-- ПОРТФОЛИО -->
     <section class="container" id="portfolio">
         <h2>Мои работы</h2>
-        
-        <div class="portfolio-tabs">
-            <button class="tab-btn active" onclick="filterPortfolio('all')">Все</button>
-            <button class="tab-btn" onclick="filterPortfolio('landing')">Лендинги</button>
-            <button class="tab-btn" onclick="filterPortfolio('corporate')">Бизнес-сайты</button>
+        <div class="portfolio-tabs" role="tablist" aria-label="Фильтр портфолио">
+            <button type="button" class="tab-btn active" data-filter="all">Все</button>
+            <button type="button" class="tab-btn" data-filter="landing">Лендинги</button>
+            <button type="button" class="tab-btn" data-filter="corporate">Бизнес-сайты</button>
         </div>
-
         <div class="slider-container">
             <div class="slider" id="slider">
-                <!-- Слайд 1 -->
                 <div class="slide" data-category="landing">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" alt="Проект 1">
+                    <div class="project-visual pv-1" role="img" aria-label="Превью лендинга швейного производства"><span>Кейс · лендинг</span></div>
                     <h3>Лендинг для швейного производства</h3>
+                    <p>Одностраничник с акцентом на заявки: услуги, сроки, форма заказа.</p>
                 </div>
-                <!-- Слайд 2 -->
                 <div class="slide" data-category="corporate">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800" alt="Проект 2">
+                    <div class="project-visual pv-2" role="img" aria-label="Превью сайта автосервиса"><span>Кейс · визитка</span></div>
                     <h3>Сайт-визитка для автосервиса</h3>
+                    <p>Услуги, прайс и быстрый контакт — чтобы клиент звонил с первого экрана.</p>
                 </div>
-                <!-- Слайд 3 -->
                 <div class="slide" data-category="landing">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800" alt="Проект 3">
+                    <div class="project-visual pv-3" role="img" aria-label="Превью лендинга доставки еды"><span>Кейс · доставка</span></div>
                     <h3>Одностраничник для доставки еды</h3>
+                    <p>Меню, зоны доставки и кнопка заказа в мессенджер.</p>
                 </div>
             </div>
-            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+            <button type="button" class="slider-btn prev" aria-label="Предыдущий проект">&#10094;</button>
+            <button type="button" class="slider-btn next" aria-label="Следующий проект">&#10095;</button>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="container faq-max" id="faq">
         <h2>Часто задаваемые вопросы</h2>
-        
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">Каковы сроки создания сайта?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    В среднем на разработку качественного одностраничного лендинга уходит от 5 до 10 дней, в зависимости от объема текста и сложности дизайна.
-                </div>
+            <button type="button" class="faq-question" aria-expanded="false">Каковы сроки создания сайта?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer-content">В среднем на качественный одностраничный лендинг уходит от 5 до 10 дней — зависит от объёма текста и сложности дизайна.</div>
             </div>
         </div>
-
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">Как строится работа удаленно из другой страны?</div>
-            <div class="faq-answer">
-                 <div class="faq-answer-content">
-                    Мы работаем полностью онлайн через Telegram/WhatsApp/Zoom. Я предоставляю ежедневные отчеты, а все промежуточные результаты вы сможете смотреть по живой ссылке в интернете. Оплата принимается любым удобным для вас способом (карты, переводы, электронные кошельки).
-                </div>
+            <button type="button" class="faq-question" aria-expanded="false">Как строится работа удалённо из другой страны?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer-content">Работаем онлайн через Telegram / WhatsApp / Zoom. Ежедневные отчёты и живая ссылка на промежуточные версии. Оплата — карты, переводы или электронные кошельки.</div>
             </div>
         </div>
-
         <div class="faq-item">
-            <div class="faq-question" onclick="toggleFaq(this)">Входят ли в стоимость правки?</div>
-            <div class="faq-answer">
-                <div class="faq-answer-content">
-                    Да, в процессе утверждения сайта мы делаем до 3-х этапов бесплатных комплексных правок, чтобы довести конечный продукт до идеального для вас состояния.
+            <button type="button" class="faq-question" aria-expanded="false">Входят ли в стоимость правки?</button>
+            <div class="faq-answer" role="region">
+                <div class="faq-answer-content">Да: до трёх этапов бесплатных комплексных правок при утверждении сайта.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Обсудим ваш проект</h2>
+            <div class="contact-box">
+                <p>Напишите в Telegram — отвечу по срокам, бюджету и формату сайта. WhatsApp и почту можно добавить рядом, когда будете готовы.</p>
+                <div class="contact-links">
+                    <a class="btn" href="https://t.me/Dredwyn" target="_blank" rel="noopener noreferrer">Telegram @Dredwyn</a>
+                    <!-- Замените ссылки ниже на свои, когда появятся -->
+                    <a class="btn btn-outline" href="https://wa.me/00000000000" target="_blank" rel="noopener noreferrer">WhatsApp (укажите номер)</a>
+                    <a class="btn btn-outline" href="mailto:hello@example.com">Email (укажите адрес)</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ПОДВАЛ -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 NB.Dev — Профессиональная фронтенд-разработка.</p>
+            <div class="footer-links">
+                <a href="https://t.me/Dredwyn" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a href="#portfolio">Портфолио</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <p>&copy; 2026 NB.Dev — профессиональная фронтенд-разработка.</p>
         </div>
     </footer>
 
-    <!-- СКРИПТЫ (РАБОЧАЯ ЛОГИКА) -->
     <script>
-        // ЛОГИКА СЛАЙДЕРА
-        let currentSlide = 0;
-        const slider = document.getElementById('slider');
-        const slides = document.querySelectorAll('.slide');
+        (function () {
+            const slider = document.getElementById('slider');
+            const allSlides = Array.from(document.querySelectorAll('.slide'));
+            const prevBtn = document.querySelector('.slider-btn.prev');
+            const nextBtn = document.querySelector('.slider-btn.next');
+            let currentSlide = 0;
+            let visible = allSlides.slice();
 
-        function moveSlide(direction) {
-            currentSlide += direction;
-            if (currentSlide >= slides.length) currentSlide = 0;
-            if (currentSlide < 0) currentSlide = slides.length - 1;
-            
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-
-        // ФИЛЬТРАЦИЯ ПОРТФОЛИО
-        function filterPortfolio(category) {
-            // Сбрасываем положение слайдера
-            currentSlide = 0;
-            slider.style.transform = `translateX(0%)`;
-
-            // Подсвечиваем кнопки табов
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // Фильтруем элементы
-            slides.forEach(slide => {
-                if (category === 'all' || slide.getAttribute('data-category') === category) {
-                    slide.style.display = 'block';
-                } else {
-                    slide.style.display = 'none';
-                }
-            });
-        }
-
-        // ЛОГИКА АККОРДЕОНА (FAQ)
-        function toggleFaq(element) {
-            const item = element.parentElement;
-            const answer = item.querySelector('.faq-answer');
-            
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-                answer.style.maxHeight = '0';
-            } else {
-                // Закрываем другие открытые вкладки FAQ
-                document.querySelectorAll('.faq-item').forEach(el => {
-                    el.classList.remove('active');
-                    el.querySelector('.faq-answer').style.maxHeight = '0';
+            function applyVisibility(category) {
+                allSlides.forEach(function (slide) {
+                    const match = category === 'all' || slide.getAttribute('data-category') === category;
+                    slide.style.display = match ? 'block' : 'none';
                 });
-
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
+                visible = allSlides.filter(function (s) { return s.style.display !== 'none'; });
+                // Compact: re-append visible slides so they sit at 0,1,2… without gaps
+                visible.forEach(function (s) { slider.appendChild(s); });
+                allSlides.filter(function (s) { return s.style.display === 'none'; })
+                    .forEach(function (s) { slider.appendChild(s); });
+                currentSlide = 0;
+                slider.style.transform = 'translateX(0)';
             }
-        }
+
+            function moveSlide(direction) {
+                if (!visible.length) return;
+                currentSlide = (currentSlide + direction + visible.length) % visible.length;
+                slider.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+            }
+
+            document.querySelectorAll('.tab-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('.tab-btn').forEach(function (b) {
+                        b.classList.toggle('active', b === btn);
+                    });
+                    applyVisibility(btn.getAttribute('data-filter'));
+                });
+            });
+            prevBtn.addEventListener('click', function () { moveSlide(-1); });
+            nextBtn.addEventListener('click', function () { moveSlide(1); });
+
+            document.querySelectorAll('.faq-question').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const item = btn.parentElement;
+                    const answer = item.querySelector('.faq-answer');
+                    const open = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item').forEach(function (el) {
+                        el.classList.remove('active');
+                        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        el.querySelector('.faq-answer').style.maxHeight = '0';
+                    });
+                    if (!open) {
+                        item.classList.add('active');
+                        btn.setAttribute('aria-expanded', 'true');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+        })();
     </script>
 </body>
 </html>
